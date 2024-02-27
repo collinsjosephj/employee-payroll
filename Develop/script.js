@@ -5,27 +5,32 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   const employeesArray =[]
-  let more = true;
-  while (more === true) {
-  const firstName = window.prompt("Please enter your first name") // Will prompt user for their first name "window.prompt" referenced from MDN
-  const lastName = window.prompt("Please enter your last name") // Will prompt user for their last name
-  const salary= window.prompt("Please enter your salary"); // Will prompt user for their salary 
-
+  let addEmp = true;
+  while (addEmp) {
+    const firstName = window.prompt(`Please the first name of the given employee`) // Will prompt user for their first name "window.prompt" referenced from MDN
+    const lastName = window.prompt(`Please enter the last name of the given employee`) // Will prompt user for their last name
+    const salary = parseInt(window.prompt(`Please enter the salary`)); // Will prompt user for their salary 
+    
+    // Creates an employee object with the input data
+    const employee = {firstName, lastName, salary}; 
+    // pushes the newly created object in an array
+    employeesArray.push(employee); 
+    // Asks the user if they would like to add another employee?
+    addEmp = window.confirm(`Would you like to input another employee?`); 
   }
-  employeesArray.push(employee);
-  console.log(employeesArray);
+  console.logo(employeesArray);
   return employeesArray;
 };
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-  let total = 0;
-  let average = 0;
+  let totalSal = 0;
   for ( let i = 0; i < employeesArray.length; i++ ) {
-    total += employeesArray[i].salary // Will compile all of the employee salaries
-    average = total/employeesArray.length // Will average the employee salaries by the total amt of employees in array
+    totalSalary += employeesArray[i].salary // Will sum up all of the employee salaries
   }
-    return average;
+  averageSal = totalSal/employeesArray.length // Will take an average of the employee salaries
+  return averageSal;
 }
 
 // Select a random employee
@@ -35,11 +40,11 @@ const getRandomEmployee = function(employeesArray) {
   console.log(randomEmployee);
 };
 
-/*
-  ====================
-  STARTER CODE
-  Do not modify any of the code below this line:
-*/
+//
+//====================
+//    STARTER CODE
+//Do not modify any of the code below this line:
+
 
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
