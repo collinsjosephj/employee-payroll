@@ -12,14 +12,14 @@ const collectEmployees = function() {
     const salary = parseInt(window.prompt(`Please enter the salary`)); // Will prompt user for their salary 
     
     // Creates an employee object with the input data
-    const employee = {firstName, lastName, salary}; 
+    const employees = {firstName, lastName, salary}; 
     // pushes the newly created object in an array
-    employeesArray.push(employee); 
+    employeesArray.push(employees); 
     // Asks the user if they would like to add another employee?
     addEmp = window.confirm(`Would you like to input another employee?`); 
   }
-  console.logo(employeesArray);
-  return employeesArray;
+  //console.log(employeesArray);
+    return employeesArray;
 };
 
 // Display the average salary
@@ -27,24 +27,22 @@ const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
   let totalSal = 0;
   for ( let i = 0; i < employeesArray.length; i++ ) {
-    totalSalary += employeesArray[i].salary // Will sum up all of the employee salaries
+    totalSal += employeesArray[i].salary // Will sum up all of the employee salaries
   }
-  averageSal = totalSal/employeesArray.length // Will take an average of the employee salaries
-  return averageSal;
-}
+  average = totalSal/employeesArray.length; // Will take an average of the employee salaries
+  return console.log(`$${average} is the average salary of our (${employeesArray.length}) employees`); //returns avg salary of employees that have been entered into the array
+} 
 
-// Select a random employee
+// Select a random employee -- built in math object referenced from MDN 
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   const randomEmployee = employeesArray[Math.floor(Math.random() * employeesArray.length)];
-  console.log(randomEmployee);
+  console.log(`CONGRATS, ${randomEmployee.firstName} ${randomEmployee.lastName} , YOU are are the winner of a brand new CAR!`);
 };
 
-//
 //====================
 //    STARTER CODE
 //Do not modify any of the code below this line:
-
 
 // Display employee data in an HTML table
 const displayEmployees = function(employeesArray) {
