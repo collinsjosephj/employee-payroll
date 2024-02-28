@@ -13,7 +13,7 @@ This is a payroll manager that enables a manger to view and manage data. The goa
 
 <img width="1439" alt="Screenshot 2024-02-27 at 17 21 20" src="https://github.com/collinsjosephj/employee-payroll/assets/156174614/dc8e649f-ec84-4a56-99c4-6a6c0a26c412">
 
-This application can be found deployed on GitHub pages at: []
+This application can be found deployed on GitHub pages at: [https://collinsjosephj.github.io/employee-payroll/]
 
 
 ### Licensing
